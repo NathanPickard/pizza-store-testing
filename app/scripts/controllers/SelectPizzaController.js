@@ -1,4 +1,4 @@
-angular.module('pizzaStore').controller('SelectPizzaController', function($scope, OrderService) {
+angular.module('pizzaStore').controller('SelectPizzaController', function($scope, $location, OrderService) {
     $scope.choices = ['canadian', 'pepperoni', 'vegetarian'];
     $scope.pizzaType = '';
 
@@ -10,6 +10,7 @@ angular.module('pizzaStore').controller('SelectPizzaController', function($scope
         $scope.orderInProgress = true;
         OrderService.placeOrder($scope.pizzaType).then(function(data) {
           $scope.orderInProgress = false;
+          $location.path('/order-status');
         });
       }
     };

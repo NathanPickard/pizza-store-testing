@@ -1,6 +1,4 @@
-angular
-  .module('pizzaStore')
-  .controller('OrderStatusController', function($scope, $interval, OrderService) {
+angular.module('pizzaStore').controller('OrderStatusController', function($scope, $interval, OrderService) {
     $scope.orderStatus = 'pizza is on the way!';
     $scope.coupon = null;
 

@@ -1,6 +1,4 @@
-angular
-  .module('pizzaStore')
-  .directive('accordion', function() {
+angular.module('pizzaStore').directive('accordion', function() {
     return {
       restrict: 'E',
       transclude: true,
