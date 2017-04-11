@@ -22,6 +22,10 @@ describe('Place An Order', function() {
     placeOrderButton.click();
 
     expect(browser.getLocationAbsUrl()).toBe('/order-status');
-
+    var orderStatusList = element(by.tagName('order-status'));
+    browser.sleep(1000);
+    expect(orderStatusList.getText()).toMatch('in progress');
+    browser.sleep(1000);
+    expect(orderStatusList.getText()).toMatch('complete');
   });
 });

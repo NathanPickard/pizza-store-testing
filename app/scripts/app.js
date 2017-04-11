@@ -1,6 +1,6 @@
 angular
   // section 4.1.7 add ngResource as dependency
-  .module('pizzaStore', ['ngRoute'])
+  .module('pizzaStore', ['ngRoute', 'ngResource'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

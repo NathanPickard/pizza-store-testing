@@ -1,7 +1,4 @@
-// TODO: 4.3.6 implement directive
-angular
-  .module('pizzaStore')
-  .directive('orderStatus', function(OrderService) {
+angular.module('pizzaStore').directive('orderStatus', function(OrderService) {
     return {
       restrict: 'E',
       scope: {},
