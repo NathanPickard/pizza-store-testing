@@ -16,7 +16,7 @@ describe('orderStatus directive', function() {
           return $q.when('complete');
       }
     };
-    spyOn(OrderService, 'getOrderStatus').and.callFake(fakeGetOrderStatus;)
+    spyOn(OrderService, 'getOrderStatus').and.callFake(fakeGetOrderStatus);
   }));
 
   var scope;
@@ -33,13 +33,13 @@ describe('orderStatus directive', function() {
     expect(statusElement.length).toBe(1);
     expect(statusElement.text()).toBe('not ordered');
 
-    scope.$broadcase('check-order-status');
+    scope.$broadcast('check-order-status');
     scope.$digest();
     statusElement = element.find('ul').find('li');
     expect(statusElement.length).toBe(2);
     expect(statusElement.text()).toBe('not ordered' + 'in progress');
 
-    scope.$broadcase('check-order-status');
+    scope.$broadcast('check-order-status');
     scope.$digest();
     statusElement = element.find('ul').find('li');
     expect(statusElement.length).toBe(3);

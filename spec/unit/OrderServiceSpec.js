@@ -56,4 +56,17 @@ describe('Order Service', function() {
       $rootScope.$apply();
     });
   });
+
+  describe('getCoupon', function() {
+    it('returns text and couponCode in response', function(done) {
+      $httpBackend.expectGET('/api/order/coupon');
+      OrderService.getCoupon().then(function(coupon) {
+        expect(coupon.text).toBe('save 10% off your next order');
+        expect(coupon.couponCode).toBe('TESTCOUPON');
+        done();
+      });
+      $httpBackend.flush();
+      $rootScope.$apply();
+    });
+  });
 });

@@ -12,6 +12,10 @@ angular.module('pizzaStore').service('OrderService', function($q, $resource) {
     getStatus: {
       method: 'GET',
       params: { controller: 'status' }
+    },
+    getCoupon: {
+      method: 'GET',
+      params: {controller: 'coupon' }
     }
   });
 
@@ -38,13 +42,12 @@ angular.module('pizzaStore').service('OrderService', function($q, $resource) {
     }
     return $q.when(null);
   };
-  });
 
-  // this.getCoupon = function() {
-  //   var deferred = $q.defer();
-  //   Order.getCoupon(function(coupon) {
-  //     deferred.resolve(coupon);
-  //   });
-  //   return deferred.promise;
-  // }
-// });
+  this.getCoupon = function() {
+    var deferred = $q.defer();
+    Order.getCoupon(function(coupon) {
+      deferred.resolve(coupon);
+    });
+    return deferred.promise;
+  }
+});

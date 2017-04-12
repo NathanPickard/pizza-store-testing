@@ -27,5 +27,8 @@ describe('Place An Order', function() {
     expect(orderStatusList.getText()).toMatch('in progress');
     browser.sleep(1000);
     expect(orderStatusList.getText()).toMatch('complete');
+
+    var coupon = element(by.id('coupon'));
+    expect(coupon.getText()).not.toBe('');
   });
 });
